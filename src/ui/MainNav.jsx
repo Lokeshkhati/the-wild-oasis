@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom';
+import { HiOutlineHome, HiOutlineCalendarDays, HiOutlineHomeModern, HiOutlineUsers, HiOutlineCog6Tooth } from 'react-icons/hi2';
 
 const NavList = styled.ul`
 display:flex;
@@ -49,20 +50,46 @@ const MainNav = () => {
         <nav>
             <NavList>
                 <li>
-                    <StyledNavLink to='/dashboard'>Home</StyledNavLink>
+                    <StyledNavLink to='/dashboard'>
+                        <HiOutlineHome />
+                        <span>
+                            Home
+                        </span>
+                    </StyledNavLink>
                 </li>
                 <li>
-                    <StyledNavLink to='/dashboard'>Bookings</StyledNavLink>
+                    <StyledNavLink to='/bookings'>
+                        <HiOutlineCalendarDays />
+                        <span>
+                            Bookings
+                        </span>
+                    </StyledNavLink>
                 </li>
                 <li>
-                    <StyledNavLink to='/dashboard'>Home</StyledNavLink>
+                    <StyledNavLink to='/cabins'>
+                        <HiOutlineHomeModern />
+                        <span>
+                            Cabins
+                        </span>
+                    </StyledNavLink>
                 </li>
                 <li>
-                    <StyledNavLink to='/dashboard'>Home</StyledNavLink>
+                    <StyledNavLink to='/users'>
+                        <HiOutlineUsers />
+                        <span>
+                            Users
+                        </span>
+                    </StyledNavLink>
                 </li>
                 <li>
-                    <StyledNavLink to='/dashboard'>Home</StyledNavLink>
+                    <StyledNavLink to='/settings'>
+                        <HiOutlineCog6Tooth />
+                        <span>
+                            Settings
+                        </span>
+                    </StyledNavLink>
                 </li>
+
             </NavList>
         </nav>
     )
