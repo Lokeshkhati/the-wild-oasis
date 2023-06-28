@@ -12,7 +12,7 @@ width:auto
 const Logo = () => {
     return (
         <StyledLogo>
-            <Img src='' alt='Logo' />
+            <Img src='/logo-light.png' alt="logo-img" />
         </StyledLogo>
     )
 }
