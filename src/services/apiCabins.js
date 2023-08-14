@@ -13,5 +13,4 @@ const getCabins = async () => {
     return data
 }
 
-
 export { getCabins }
