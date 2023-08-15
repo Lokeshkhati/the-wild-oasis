@@ -5,7 +5,7 @@ import { getCabins } from "../services/apiCabins"
 
 const Cabins = () => {
     useEffect(() => {
-        getCabins().then((data) => console.log(data))
+        // getCabins().then((data) => console.log(data))
     }, [])
     return (
         <Row type='horizontal'>
