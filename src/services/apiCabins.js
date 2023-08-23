@@ -15,11 +15,11 @@ const getCabins = async () => {
 
 
 const createEditCabin = async (newCabin, id) => {
-    const hasImagePatch = newCabin.image?.startsWith?.(supabaseUrl)
+    const hasImagePath = newCabin.image?.startsWith?.(supabaseUrl)
 
     const imageName = `${Math.random()}-${newCabin.image.name}`.replaceAll('/', "")
 
-    const imagePath = hasImagePatch ? newCabin.image : `${supabaseUrl}/storage/v1/object/public/cabin-images/${imageName}`
+    const imagePath = hasImagePath ? newCabin.image : `${supabaseUrl}/storage/v1/object/public/cabin-images/${imageName}`
 
     // create/edit Cabin
     let query = supabase.from('cabins')
@@ -39,6 +39,7 @@ const createEditCabin = async (newCabin, id) => {
         throw new Error('Cabin could not be created')
     }
     // upload image
+    if (hasImagePath) return data
     const { error: storageError } = await supabase.storage.from('cabin-images').upload(imageName, newCabin.image)
 
     if (storageError) {
