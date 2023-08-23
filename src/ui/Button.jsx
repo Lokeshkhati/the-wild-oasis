@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 const Button = styled.button`
 font-size:1.4rem;
@@ -16,19 +16,19 @@ background-color: var(--color-brand-700);}
 `;
 
 const sizes = {
-    small: css`
+  small: css`
     font-size: 1.2rem;
     padding: 0.4rem 0.8rem;
     text-transform: uppercase;
     font-weight: 600;
     text-align: center;
   `,
-    medium: css`
+  medium: css`
     font-size: 1.4rem;
     padding: 1.2rem 1.6rem;
     font-weight: 500;
   `,
-    large: css`
+  large: css`
     font-size: 1.6rem;
     padding: 1.2rem 2.4rem;
     font-weight: 500;
@@ -36,14 +36,14 @@ const sizes = {
 };
 
 const variations = {
-    primary: css`
+  primary: css`
     color: var(--color-brand-50);
     background-color: var(--color-brand-600);
     &:hover {
       background-color: var(--color-brand-700);
     }
   `,
-    secondary: css`
+  secondary: css`
     color: var(--color-grey-600);
     background: var(--color-grey-0);
     border: 1px solid var(--color-grey-200);
@@ -51,7 +51,7 @@ const variations = {
       background-color: var(--color-grey-50);
     }
   `,
-    danger: css`
+  danger: css`
     color: var(--color-red-100);
     background-color: var(--color-red-700);
     &:hover {
