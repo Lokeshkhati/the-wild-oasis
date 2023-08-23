@@ -1,4 +1,4 @@
-import supabase from "./supabase"
+import supabase, { supabaseUrl } from "./supabase"
 
 const getCabins = async () => {
     let { data, error } = await supabase
@@ -16,15 +16,24 @@ const getCabins = async () => {
 
 const createCabin = async (newCabin) => {
 
-    console.log(newCabin, 'api')
+    const imageName = `${Math.random()}-${newCabin.image.name}`.replaceAll('/', "")
+
+    const imagePath = `${supabaseUrl}/storage/v1/object/public/cabin-images/${imageName}`
+
+    // create Cabin
     const { data, error } = await supabase
         .from('cabins')
-        .insert([newCabin])
-    console.log(data, 'data')
+        .insert([{ ...newCabin, image: imagePath }])
     if (error) {
         throw new Error('Cabin could not be created')
     }
+    // upload image
+    const { error: storageError } = await supabase.storage.from('cabin-images').upload(imageName, newCabin.image)
 
+    if (storageError) {
+        await supabase.from('cabins').delete().eq('id', data.id)
+        throw new Error("Cabin image could not be uploaded and the cabin was not created")
+    }
     return data
 
 }

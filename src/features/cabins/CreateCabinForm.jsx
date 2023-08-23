@@ -58,7 +58,7 @@ function CreateCabinForm() {
     }, onError: (error) => toast.error(error.message)
   })
 
-  const onSubmit = (data) => mutate(data)
+  const onSubmit = (data) => { mutate({ ...data, image: data.image[0] }) }
 
   const onError = (errors) => {
     console.log(errors)
@@ -104,17 +104,22 @@ function CreateCabinForm() {
         })} />
       </FormRow>
 
-      <FormRow2>
+      <FormRow>
         <Label htmlFor="image">Cabin photo</Label>
-        <FileInput id="image" accept="image/*" />
-      </FormRow2>
+        <FileInput id="image" accept="image/*"
+          type='file'
+          {...register('image', {
+            required: "This field is required"
+          })}
+        />
+      </FormRow>
 
-      <FormRow2>
+      <FormRow>
         <Button variation="secondary" type="reset">
           Cancel
         </Button>
         <Button disabled={isCreating}>Add cabin</Button>
-      </FormRow2>
+      </FormRow>
     </Form>
   );
 }
