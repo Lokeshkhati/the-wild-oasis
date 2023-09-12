@@ -129,13 +129,13 @@ const BookingRow = ({
                     </Menus.List>
                 </Menus.Menu>
 
-                {/* <Modal.Window name="delete">
+                <Modal.Window name="delete">
                     <ConfirmDelete
                         resourceName="booking"
                         disabled={isDeleting}
                         onConfirm={() => deleteBooking(bookingId)}
                     />
-                </Modal.Window> */}
+                </Modal.Window>
             </Modal>
         </Table.Row>
     );
