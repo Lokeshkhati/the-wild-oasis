@@ -4,10 +4,12 @@ import { useNavigate } from "react-router-dom"
 import toast from "react-hot-toast"
 
 const useLogin = () => {
+    const queryClient = useQueryClient()
     const navigate = useNavigate()
     const { mutate: login, isLoading } = useMutation({
         mutationFn: ({ email, password }) => loginApi({ email, password }),
         onSuccess: (user) => {
+            queryClient.setQueriesData(['user'], user)
             navigate('/dashboard')
         },
         onError: (error) => {
@@ -18,4 +20,4 @@ const useLogin = () => {
     return { login, isLoading }
 }
 
-export default useLogin
+export default useLogin  
