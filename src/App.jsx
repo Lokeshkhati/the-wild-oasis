@@ -44,7 +44,7 @@ const App = () => {
             duration: 3000
           },
           error: {
-            duration: 500
+            duration: 2000
           },
           style: {
             fontSize: '16px',
