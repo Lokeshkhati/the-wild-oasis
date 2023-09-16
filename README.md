@@ -49,7 +49,7 @@ View the live demo of the application here 👉 [The Wild Oasis](https://the-wil
 ## Run Application
 
 - Clone the repository
-- Run npm install to install required dependencies
+- Run `npm install` to install required dependencies
 - Finally, run `npm run dev` to run the application, and open the browser to view the site on localhost.
 
 ## 👤 **Lokesh Khati**
