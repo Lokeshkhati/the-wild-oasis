@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import DashboardBox from "./DashboardBox";
+import DashboardBox from "./DashBoardBox";
 import { Area, AreaChart, CartesianGrid, Tooltip, XAxis, YAxis, ResponsiveContainer } from "recharts";
 import Heading from "../../ui/Heading";
 import { eachDayOfInterval, format, isSameDay, subDays } from "date-fns";
