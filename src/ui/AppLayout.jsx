@@ -23,7 +23,6 @@ flex-direction:column;
 gap:3.2rem;
 `;
 const AppLayout = () => {
-
     return (
         <StyledAppLayout>
             <Header />
