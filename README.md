@@ -1,7 +1,7 @@
 # The Wild Oasis🏨
 
 ## Introduction
-
+- The Wild Oasis app is built using React,React Query, Styled Components, React Hook Form, Supabase, advanced compound component pattern, authentication, charts, dark mode, professional application planning and development.
 - Users can filter and sort bookings and cabins.
 - User can create a new user and update the existing user details.
 - Additional features: Light mode and dark mode, pagination, and Caching of data using React Query, toast notification.
