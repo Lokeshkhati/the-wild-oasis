@@ -8,6 +8,7 @@ import Stat from "./Stat";
 import { formatCurrency } from "../../utils/helpers";
 
 const Stats = ({ bookings, confirmedStays, numDays, cabinCount }) => {
+    console.log(confirmedStays, numDays, cabinCount, 'hola')
     // 1.
     const numBookings = bookings?.length;
 
@@ -20,7 +21,7 @@ const Stats = ({ bookings, confirmedStays, numDays, cabinCount }) => {
     // 4.
     const occupation =
         confirmedStays?.reduce((acc, cur) => acc + cur.numNights, 0) /
-        (numDays * cabinCount);
+        (numDays);
     return (
         <>
             <Stat
@@ -46,6 +47,7 @@ const Stats = ({ bookings, confirmedStays, numDays, cabinCount }) => {
                 color="yellow"
                 icon={<HiOutlineChartBar />}
                 value={Math.round(occupation * 100) + "%"}
+
             />
         </>
     );
