@@ -46,7 +46,8 @@ const Stats = ({ bookings, confirmedStays, numDays, cabinCount }) => {
                 title="Occupancy rate"
                 color="yellow"
                 icon={<HiOutlineChartBar />}
-                value={Math.round(2 * 10) + "%"}
+                value={20 + "%"}
+            // occupation
 
             />
         </>
